@@ -11,6 +11,7 @@ const conn = require('./config/connMysql');
 
 //Listar Productos
 
+
 rutas.get('/productos',(req,res)=>{
     //let tabla = (req.baseUrl).replace('/api','');
     //let sql =`select * from ${tabla}`;
