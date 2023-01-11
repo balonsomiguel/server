@@ -136,6 +136,18 @@ rutas.get('/clientes/:email',(req,res)=>{
     });
 });
 
+//Traer cliente por email
+rutas.post('/clientes/consultar',(req,res)=>{
+    const {email,password} = req.body;
+    let sql =`select * from clientes where email = '${email}' and password = '${password}'`;
+    conn.query(sql,(err,rows,fields)=>{
+        if(err) throw err;
+        else{
+            res.status(200).json({"status":200,"cliente": rows});
+        }
+    });
+});
+
 
 // Request compras
 
